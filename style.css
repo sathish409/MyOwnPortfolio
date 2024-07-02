@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    
+}
+nav{
+    background: skyblue;
+}
+nav div{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.name ::after{
+
+}
+.right ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+    gap: .5rem;
+    
+
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+    
+}
+
+/* hero  */
+
+.hero{
+    background: red;
+    padding: 40px;
+    margin-top: 2rem;
+    box-shadow:5px 5px 5px 5px;
+    box-shadow: grey;
+}
