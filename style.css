@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background: skyblue; 
 
 }
 *{
@@ -12,6 +13,7 @@ body{
 }
 nav{
     background: skyblue;
+    box-shadow:0 0 10px;
 }
 nav div{
     display: flex;
@@ -47,9 +49,44 @@ a{
 /* hero  */
 
 .hero{
+   
     background: red;
-    padding: 40px;
+    padding: 40px 80px;
+    height: 50vh;
     margin-top: 2rem;
-    box-shadow:5px 5px 5px 5px;
-    box-shadow: grey;
+    box-shadow:0 0 10px;
+ border: 1px solid #ccc;
+ box-shadow: gray;
+
+}
+button{
+    background: black;
+    color: white;
+    border-radius: 10px;
+    width: 18vw;
+    height: 8vh;
+}
+.lt{
+    width: 50%;
+
+}
+.rt{
+    width: 50%;
+    position: absolute;
+    left: 50vw;
+    top: 30px;
+}
+img{
+   height: 65vh;
+   width: 60%;
+}
+
+/* certificates */
+.l{
+    background: red;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
 }
