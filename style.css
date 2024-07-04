@@ -1,88 +1,70 @@
 body{
     margin: 0;
-    background: skyblue; 
-
+   
 }
 *{
     box-sizing: border-box;
 }
-/* exp */
-/* @keyframes rotate{
-    0%{
-        transform: rotate(0deg);
-            }
-            100%{
-                transform: rotate(360deg);
-            }
-} */
-.circle{
-    /* animation: rotate 2s infinite linear ; */
+:root{
+    --color-dark:black;
+    --shadow: 0 0 10px;
+    --bg-dark:var(--color-dark);
+    --body-bg:skyblue;
+     
+}
+.wrapper{
+    background:var(--body-bg) ; 
     position: relative;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-  border: 2px double red;
+}
+/* darkmode toggler */
+.wrapper label{
+    position: fixed;
+    left: 10vw;
+    top: 18vh;
+   
+}
+.wrapper label:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: all .3s;
+}
+#darkMode:checked + .wrapper{
+background: var(--bg-dark);
+color: white;
+}
+#darkMode{
+    display: none;
+}
 
-}
-.circle ::after, 
-.circle ::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: radial-gradient(dotted, transparent 60%, yellow 60%);
-    clip-path: polygon(50% 0%, 52% 5%, 58% 10%, 60% 12%, 66% 18%, 70% 20%, 74% 26%, 80% 30%, 85% 35%, 90% 40%, 94% 45%, 100% 50%, 94% 55%, 90% 60%, 85% 65%, 80% 70%, 74% 74%, 70% 80%, 66% 82%, 60% 88%, 58% 90%, 52% 95%, 50% 100%, 48% 95%, 42% 90%, 40% 88%, 34% 82%, 30% 80%, 26% 74%, 20% 70%, 15% 65%, 10% 60%, 6% 55%, 0% 50%, 6% 45%, 10% 40%, 15% 35%, 20% 30%, 26% 26%, 30% 20%, 34% 18%, 40% 12%, 42% 10%, 48% 5%);
-    transform: rotate(0deg);
-    transform-origin: center;
-
-}
-.circle ::after{
-    transform: rotate(360deg);
-}
-.dotted{
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    /* animation: rotate 2s infinite  reverse; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  border: 2px dotted blue;
-}
 .container{
     width: 80%;
     margin: auto;
     
 }
 nav{
-    background: skyblue;
     box-shadow:0 0 10px;
+    height: 15vh;
 }
 nav div{
     display: flex;
     justify-content: space-between;
     
 }
-.left{
+ .left{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
-.name ::after{
-
+.profession::before{
+content: "";
+background: orangered;
+height: 60%;
+width: 4px;
+position: absolute;
+top: 10px;
+left: 55px;
 }
 .right ul{
     display: flex;
@@ -94,10 +76,9 @@ nav div{
     
 
 }
-a{
+.right a{
     text-decoration: none;
     cursor: pointer;
-    /* color: red; */
     
 }
 
@@ -108,7 +89,7 @@ a{
     background: red;
     padding: 40px 80px;
     height: 50vh;
-    margin-top: 2rem;
+    margin-top: 4rem;
     box-shadow:0 0 10px;
  border: 1px solid #ccc;
  box-shadow: gray;
@@ -131,7 +112,7 @@ button{
     left: 50vw;
     top: 30px;
 }
-img{
+.rt img{
    height: 65vh;
    width: 60%;
 }
@@ -187,7 +168,7 @@ gap: 1rem;
 .bottom{
     color: black;
 }
-.skills h2{
+ h2{
     margin-top: 5rem;
     display: flex;
     justify-content: center;
@@ -217,4 +198,172 @@ gap: 1rem;
     color: brown;
     display: flex;
     flex-direction: column;
+}
+
+/* projects */
+/* .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.projects{
+ margin-top: 5rem;   
+}
+.projects .projects-container{
+
+}
+.projects .card{
+  box-shadow: var(--shadow);
+  box-shadow: gray;
+  border-radius: 5px;
+  flex-grow: 1;
+width: 350px;
+}
+.projects .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 10px;
+
+}
+.projects .description{
+    padding: 10px;
+}
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+
+/* About */
+.left img{
+    width: 250px;
+    margin-top: 1rem;
+}
+
+.about-container{
+    display: flex;
+    gap: 1rem;
+
+}
+.about{
+    padding: 10px;
+    margin-top: 10rem;
+    background:yellowgreen;
+}
+.interest div{
+    display: flex;
+    gap: 2rem;
+    margin-top: -1rem;
+}
+
+/* contact */
+
+.ids{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.ids  i{
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+.email{
+    border-radius: 30px;
+    background: black;
+border: 1px solid;
+    color: white;
+    width: 250px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+}
+.round{
+    border-radius: 50%;
+    background: red;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Footer */
+
+footer{
+   
+    background: black;
+    color: white;
+    min-height: 30vh;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.Top{
+    display: flex;
+    margin-bottom: 5rem;
+    gap: 2rem;
+}
+.social a{
+    color: white;
+  
+}
+.Links a{
+    color: white;
+}
+footer .Top ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+footer .Top ul li{
+    line-height: 1.5rem;
+}
+/* .social{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} */
+ a:hover{
+    cursor: pointer;
+    color: red;
+    transition: all .3s;
+   
+}
+
+.GoUp{
+    font-size: 3rem;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: black;
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+
+
 }
