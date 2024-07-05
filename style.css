@@ -1,9 +1,14 @@
 body{
+    overflow-x: hidden;
     margin: 0;
    
 }
 *{
     box-sizing: border-box;
+}
+.grid{
+    display: grid;
+    gap: 1rem;
 }
 :root{
     --color-dark:black;
@@ -17,7 +22,7 @@ body{
     position: relative;
 }
 /* darkmode toggler */
-.wrapper label{
+.wrapper >label{
     position: fixed;
     left: 10vw;
     top: 18vh;
@@ -29,52 +34,58 @@ body{
     transition: all .3s;
 }
 #darkMode:checked + .wrapper{
-background: var(--bg-dark);
+--body-bg: var(--bg-dark);
 color: white;
 }
 #darkMode{
     display: none;
 }
 
+
 .container{
     width: 80%;
     margin: auto;
+    max-width: 1400px;
     
 }
 nav{
     box-shadow:0 0 10px;
-    height: 15vh;
+    height: 10vh;
+    display: flex;
 }
 nav div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
 }
  .left{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     gap: 1rem;
     position: relative;
 }
 .profession::before{
 content: "";
 background: orangered;
-height: 60%;
+height: 100%;
 width: 4px;
 position: absolute;
-top: 10px;
 left: 55px;
 }
-.right ul{
+.right .navigation{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     list-style-type: none;
     text-decoration: none;
     gap: .5rem;
     
 
+}
+.right{
+    display: flex;
+    align-items: center;
 }
 .right a{
     text-decoration: none;
@@ -83,11 +94,16 @@ left: 55px;
 }
 
 /* hero  */
+.details{
+margin-top: 5rem;
+max-height: 60vh;
+}
 
 .hero{
-   
+    grid-template-areas: "lt rt" ;
+    position: relative;
     background: red;
-    padding: 40px 80px;
+    padding: 2rem;
     height: 50vh;
     margin-top: 4rem;
     box-shadow:0 0 10px;
@@ -100,21 +116,27 @@ button{
     color: white;
     border-radius: 10px;
     width: 18vw;
-    height: 8vh;
+    height: 10vh;
 }
 .lt{
-    width: 50%;
+    grid-area: lt;
+    /* width: 50%; */
+    margin-left: 10vw;
+    justify-content: center;
 
 }
 .rt{
-    width: 50%;
-    position: absolute;
-    left: 50vw;
-    top: 30px;
+    display: flex;
+    grid-area: rt;
+    /* width: 50%;
+    position: absolute; */
+  justify-content: flex-end;
+  align-items: left;
+  margin-top: -7rem;
 }
 .rt img{
    height: 65vh;
-   width: 60%;
+   width: 100%;
 }
 
 /* certificates */
@@ -160,13 +182,15 @@ gap: 1rem;
 .skills div{
    display: flex; 
    justify-content: space-between;
- 
+
 }
 .top{
     font-size: 2rem;
 }
 .bottom{
-    color: black;
+    margin-top: 1rem;
+    color: white;
+ 
 }
  h2{
     margin-top: 5rem;
@@ -239,7 +263,7 @@ width: 350px;
 
 
 /* About */
-.left img{
+.photo img{
     width: 250px;
     margin-top: 1rem;
 }
@@ -366,4 +390,42 @@ footer .Top ul li{
     bottom: 60px;
 
 
+}
+
+
+/* hamburger */
+
+#hamburger{
+    display: none;
+}
+[for="hambruger"]{
+    cursor: pointer;
+}
+
+
+@media(max-width:768px){
+    .right{
+        display: none;
+    }
+
+    .right{
+        position: absolute;
+        display: flex;
+        justify-content: flex-start;
+        top: 10vh;
+      left: calc(100vw - 250px);
+        width: 250px;
+        height: 60vh;
+        background: var(--body-bg);
+        box-shadow: var(--shadow);
+    }
+.right .navigation{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   
+}
+}
+.right .navigation li{
+    line-height: 1rem;
 }
