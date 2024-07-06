@@ -21,6 +21,29 @@ body{
     background:var(--body-bg) ; 
     position: relative;
 }
+/* Sun */
+#sun{}
+#sun:checked + .details >label{
+    animation: rotate 5s infinite linear ;
+    cursor: pointer;
+    font-size: 10rem;
+}
+.details label{
+animation: rotate 5s infinite linear reverse;
+position: absolute;
+right: 10vw;
+top: 18vh;
+font-size: 2rem;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+    
+}
 /* darkmode toggler */
 .wrapper >label{
     position: fixed;
@@ -101,7 +124,6 @@ max-height: 60vh;
 
 .hero{
     grid-template-areas: "lt rt" ;
-    position: relative;
     background: red;
     padding: 2rem;
     height: 50vh;
@@ -234,14 +256,15 @@ gap: 1rem;
  margin-top: 5rem;   
 }
 .projects .projects-container{
+    grid-template-columns: repeat(2, 1fr);
 
 }
 .projects .card{
   box-shadow: var(--shadow);
   box-shadow: gray;
   border-radius: 5px;
-  flex-grow: 1;
 width: 350px;
+flex-grow: 1;
 }
 .projects .links{
     display: flex;
@@ -398,34 +421,92 @@ footer .Top ul li{
 #hamburger{
     display: none;
 }
-[for="hambruger"]{
-    cursor: pointer;
+[for="hamburger"]{
+    display: none;
 }
 
 
 @media(max-width:768px){
-    .right{
-        display: none;
+    #hamburger:checked + .right{
+       left: calc(100vw - 250px);
+    
+    }
+    [for="hamburger"]{
+        display: block;
     }
 
     .right{
         position: absolute;
         display: flex;
-        justify-content: flex-start;
         top: 10vh;
-      left: calc(100vw - 250px);
+        left:100vw;
         width: 250px;
-        height: 60vh;
+        height: 100vh;
         background: var(--body-bg);
         box-shadow: var(--shadow);
+        font-size: 1.5rem;
+        transition: all .5s;
+   
     }
 .right .navigation{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
    
 }
-}
 .right .navigation li{
-    line-height: 1rem;
+    line-height: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+/* hero */
+.rt{
+    display: flex;
+    grid-area: rt;
+  justify-content: center;
+  align-items: center;
+  margin-top: -7rem;
+}
+.rt img{
+    height: 40vh;
+    width: 70%;
+ }
+.hero{
+    display: grid;
+    grid-template-areas: "rt" "lt";
+    height: 70vh;
+    margin-top: 2rem;
+}
+
+/* certificates */
+
+.certificates > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20%;
+    gap: 2rem;
+}
+/* .container{
+width: 70%;
+margin: auto;
+} */
+.line{
+    display: none;
+}
+
+/* projects */
+.projects .projects-container{
+    grid-template-columns:1fr;
+}
+
+/* About */
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 }
